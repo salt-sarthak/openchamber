@@ -10,7 +10,7 @@ interface FadeInOnRevealProps {
     respectReducedMotion?: boolean;
 }
 
-const FADE_ANIMATION_ENABLED = false;
+const FADE_ANIMATION_ENABLED = true;
 
 // Context to allow parent components (like VirtualMessageList) to disable animations
 // for items entering the viewport due to scrolling rather than new content

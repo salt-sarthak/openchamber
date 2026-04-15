@@ -52,17 +52,22 @@ export const Checkbox = React.memo<CheckboxProps>(function Checkbox({
       aria-label={ariaLabel}
       className={cn(
         'flex size-5 shrink-0 items-center justify-center rounded',
-        'text-muted-foreground hover:text-foreground',
+        'text-muted-foreground hover:text-foreground transition-colors duration-150',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
         disabled && 'cursor-not-allowed opacity-50',
         className
       )}
     >
-      {checked ? (
-        <RiCheckboxLine className={cn('size-4 text-primary', iconClassName)} />
-      ) : (
-        <RiCheckboxBlankLine className={cn('size-4', iconClassName)} />
-      )}
+      <span className={cn(
+        'transition-all duration-150 ease-out',
+        checked ? 'scale-100 opacity-100' : 'scale-90 opacity-70'
+      )}>
+        {checked ? (
+          <RiCheckboxLine className={cn('size-4 text-primary', iconClassName)} />
+        ) : (
+          <RiCheckboxBlankLine className={cn('size-4', iconClassName)} />
+        )}
+      </span>
     </button>
   );
 });

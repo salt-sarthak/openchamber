@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-  Dialog,
-  DialogContent,
-} from '@/components/ui/dialog';
+  ResponsiveDialog,
+  ResponsiveDialogContent,
+} from '@/components/ui/responsive-dialog';
 import { OpenChamberLogo } from '@/components/ui/OpenChamberLogo';
 import { RiDiscordFill, RiGithubFill, RiTwitterXFill } from '@remixicon/react';
 import { debugUtils } from '@/lib/debug';
@@ -108,8 +108,8 @@ export const AboutDialog: React.FC<AboutDialogProps> = ({
   const displayVersion = version;
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-xs p-6">
+    <ResponsiveDialog open={open} onOpenChange={onOpenChange}>
+      <ResponsiveDialogContent className="max-w-xs p-6">
         <div className="flex flex-col items-center text-center space-y-4">
           <OpenChamberLogo width={64} height={64} />
 
@@ -190,7 +190,7 @@ export const AboutDialog: React.FC<AboutDialogProps> = ({
             Made with love to comunity
           </p>
         </div>
-      </DialogContent>
-    </Dialog>
+      </ResponsiveDialogContent>
+    </ResponsiveDialog>
   );
 };

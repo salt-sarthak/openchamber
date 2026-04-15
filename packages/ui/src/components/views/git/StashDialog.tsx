@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
+  ResponsiveDialog,
+  ResponsiveDialogContent,
+  ResponsiveDialogDescription,
+  ResponsiveDialogFooter,
+  ResponsiveDialogHeader,
+  ResponsiveDialogTitle,
+} from '@/components/ui/responsive-dialog';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from '@/components/ui';
@@ -53,18 +53,18 @@ export const StashDialog: React.FC<StashDialogProps> = ({
   };
 
   return (
-    <Dialog open={open} onOpenChange={isProcessing ? undefined : onOpenChange}>
-      <DialogContent className="max-w-md">
-        <DialogHeader>
+    <ResponsiveDialog open={open} onOpenChange={isProcessing ? undefined : onOpenChange}>
+      <ResponsiveDialogContent className="max-w-md">
+        <ResponsiveDialogHeader>
           <div className="flex items-center gap-2">
             <RiAlertLine className="size-5 text-[var(--status-warning)]" />
-            <DialogTitle>Uncommitted Changes</DialogTitle>
+            <ResponsiveDialogTitle>Uncommitted Changes</ResponsiveDialogTitle>
           </div>
-          <DialogDescription>
+          <ResponsiveDialogDescription>
             You have uncommitted changes that would be overwritten by this {operation}.
             Would you like to stash them temporarily?
-          </DialogDescription>
-        </DialogHeader>
+          </ResponsiveDialogDescription>
+        </ResponsiveDialogHeader>
 
         <div className="py-2">
           <p className="typography-meta text-muted-foreground mb-3">
@@ -96,7 +96,7 @@ export const StashDialog: React.FC<StashDialogProps> = ({
           </span>
         </div>
 
-        <DialogFooter className="gap-2">
+        <ResponsiveDialogFooter className="gap-2">
           <Button
             variant="ghost"
             size="sm"
@@ -121,8 +121,8 @@ export const StashDialog: React.FC<StashDialogProps> = ({
               `Stash & ${operationLabel}`
             )}
           </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </ResponsiveDialogFooter>
+      </ResponsiveDialogContent>
+    </ResponsiveDialog>
   );
 };

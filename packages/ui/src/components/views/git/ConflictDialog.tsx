@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
+  ResponsiveDialog,
+  ResponsiveDialogContent,
+  ResponsiveDialogDescription,
+  ResponsiveDialogHeader,
+  ResponsiveDialogTitle,
+} from '@/components/ui/responsive-dialog';
 import { Button } from '@/components/ui/button';
 
 import { RiAlertLine, RiLoader4Line, RiChat1Line, RiAddLine } from '@remixicon/react';
@@ -166,18 +166,18 @@ export const ConflictDialog: React.FC<ConflictDialogProps> = ({
   const displayFiles = conflictDetails?.unmergedFiles || conflictFiles;
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md w-[calc(100vw-2rem)]">
+    <ResponsiveDialog open={open} onOpenChange={onOpenChange}>
+      <ResponsiveDialogContent className="max-w-md w-[calc(100vw-2rem)]">
         <div className="flex flex-col gap-4 overflow-hidden">
-          <DialogHeader>
+          <ResponsiveDialogHeader>
             <div className="flex items-center gap-2">
               <RiAlertLine className="size-5 shrink-0 text-[var(--status-warning)]" />
-              <DialogTitle>{operationLabel} Conflicts Detected</DialogTitle>
+              <ResponsiveDialogTitle>{operationLabel} Conflicts Detected</ResponsiveDialogTitle>
             </div>
-            <DialogDescription>
+            <ResponsiveDialogDescription>
               The {operation} operation resulted in conflicts that need to be resolved.
-            </DialogDescription>
-          </DialogHeader>
+            </ResponsiveDialogDescription>
+          </ResponsiveDialogHeader>
 
           {isLoading && (
             <div className="flex items-center justify-center gap-2 py-4 text-muted-foreground">
@@ -264,7 +264,7 @@ export const ConflictDialog: React.FC<ConflictDialogProps> = ({
             </div>
           </div>
         </div>
-      </DialogContent>
-    </Dialog>
+      </ResponsiveDialogContent>
+    </ResponsiveDialog>
   );
 };
